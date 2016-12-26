@@ -1,0 +1,87 @@
+//Advanced Javascript
+
+Primitives | Everything 
+
+Numbers, strings, boolean, undefined, null  | Arrays, Functions, objects, dates, wrappers for nums, strings, booleans
+
+
+{Object Oriented Programming:}
+
+Objects interact with one another through methods and properties
+
+Used to store data, structure applications into modules and keeping code clean.
+
+We can create one main object (blue print object) also called as constructor or protoype.
+we can create other objects based on it. constructor creates instance of objects
+
+{Inheritance:}
+
+One object based on other object
+
+person {       Athelete {               Athlete {
+ var sai           var charan               var sai
+                                            var charan
+}                       }                   }
+
+
+javascript is a prototype based lang. which means inhertiance works using prototype.
+Each object in JS have prototype
+
+
+constructors prototype will belong to all the objects created by it.
+
+
+{Summary:}
+
+Every JS object has a prototype propert, which makes inheritance possible in JS.
+
+The prototype property of an object is where we put methods and properties that we want other objects to inherit
+
+The constructor's prototype property is NOT the prototype property of the constructor itself,
+it's the prototype of ALL instances created through it
+
+when a certain method or property is called, the search starts in the object itself, and if it cannot be found,
+the search moves on to the object's prototype. This continues till the method is found:
+This process is called as PROTOTYPE CHAIN
+
+
+Function Constructor is always written as first letter capital like Person (P capital)
+
+Ln:18 / when you write a new object will be created
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
