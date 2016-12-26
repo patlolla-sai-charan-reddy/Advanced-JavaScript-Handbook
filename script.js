@@ -48,7 +48,7 @@ mark.calculateAge();
 console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
-*/
+
 
 //Object.create -method
 
@@ -74,6 +74,129 @@ var jane = Object.create(personProto, {
     yearOfBirth: { value: 1987 },
     job: { value: 'designer' }
 });
+
+*/
+
+
+//Primitives vs Objects
+
+//Primitives
+var a = 23;
+var b = a;
+
+a = 46;
+console.log(a); //46
+console.log(b); //23
+
+//Objects
+
+var obj1 = {
+    name: 'john',
+    age: 26
+};
+
+var obj2 = obj1;
+
+//mutation
+
+obj.age = 30;
+
+console.log(obj1.age); //30
+console.log(obj2.age); //30
+
+
+
+//Primitive and object in a function
+
+
+var age = 27;
+
+var obj = {
+    name: 'Sai',
+    city: 'Edison'
+};
+
+function change(a, b) {
+    a = 30;
+    b.city = 'SFO';
+}
+
+change(age, obj);
+
+console.log(age); //27
+
+console.log(obj.city); //SFO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

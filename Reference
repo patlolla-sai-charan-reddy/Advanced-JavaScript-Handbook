@@ -68,6 +68,12 @@ Object.create method.
 Object.create builds on obj that inherits directly whereas function constructor inherits from prototype property.
 
 
+//Primitives vs objects
+
+Var containing primi actually hold data inside it self in obj -> variable associated contains the reference in memeory.
+
+
+
 
 
 
