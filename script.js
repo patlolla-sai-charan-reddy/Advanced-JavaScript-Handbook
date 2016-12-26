@@ -1,3 +1,4 @@
+/*
 var john = {
     name: 'John',
     yearOfBirth: 1990,
@@ -47,6 +48,59 @@ mark.calculateAge();
 console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
+*/
+
+//Object.create -method
+
+var personProto = {
+    calculateAge: function() {
+        console.log(2016 - this.yearOfBirth);
+    }
+};
+
+var john = Object.create(personProto);
+
+john.name = 'john';
+john.yearOfBirth = 1990;
+john.job = 'teacher';
+
+//Result -> In console : john --> object {name: "john", yearOfBirth: 1990, job: "teacher"};
+
+
+//Another way of adding the property
+
+var jane = Object.create(personProto, {
+    name: { value: 'Jane'},
+    yearOfBirth: { value: 1987 },
+    job: { value: 'designer' }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

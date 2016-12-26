@@ -50,6 +50,25 @@ Function Constructor is always written as first letter capital like Person (P ca
 Ln:18 / when you write a new object will be created
 
 
+{In Console - Prototype Methods}
+
+john._proto_ === Person.prototype;
+
+
+john.hasOwnProperty('')   --> true or false
+
+john instanceOf Person --> true
+
+
+{Creating Objects}
+
+
+Object.create method. 
+
+Object.create builds on obj that inherits directly whereas function constructor inherits from prototype property.
+
+
+
 
 
 
