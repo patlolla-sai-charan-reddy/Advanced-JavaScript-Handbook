@@ -91,7 +91,7 @@ even after the outer function has returned.
 
 A new function gets a new execution context.
 
-{coheren}
+{coheren}.
 
 Depending on the other function
 
