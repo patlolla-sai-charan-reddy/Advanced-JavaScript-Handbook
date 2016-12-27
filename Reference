@@ -74,9 +74,15 @@ Var containing primi actually hold data inside it self in obj -> variable associ
 
 
 
+//Objects and Functions
 
+A function is an instance of an object.
+A function behaves like any other object.
+we can store functions in a variable
+we can pass a function as an argument to another function
+we can also return a function from a function
 
-
+Above are called first class functions.
 
 
 

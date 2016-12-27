@@ -75,7 +75,7 @@ var jane = Object.create(personProto, {
     job: { value: 'designer' }
 });
 
-*/
+
 
 
 //Primitives vs Objects
@@ -126,6 +126,172 @@ change(age, obj);
 console.log(age); //27
 
 console.log(obj.city); //SFO
+
+//Objects and Functions
+
+//Functions are also objects
+
+var years = [1990, 1991, 2010, 1993, 1994];
+
+function arrayCalculation(arr, fn) { //fn here is used for a callback function
+    
+    var arrayResult = [];
+    
+    for(var i = 0; i < arr.length; i++) {
+        arrayResult.push(fn(arr[i]));
+    }
+    
+    return arrayResult;
+    
+}
+
+function calculateAge(el) { //Callback Function
+    return 2016 - el;
+}
+
+function isFullAge(el) { //Callback function
+    return el >= 18;
+}
+
+function calculateHeartRate(el) { //Callback Function
+    if( el >= 18 && el <= 81) {
+        return Math.round(206.97-(0.67 * el));
+    } else {
+        return 'Age Matters!';
+    }
+}
+
+var ages = arrayCalculation(years, calculateAge);
+var fullAges = arrayCalculation(ages, isFullAge);
+var heartRate = arrayCalculation(ages, calculateHeartRate);
+
+
+console.log(ages);
+console.log(fullAges);
+console.log(heartRate);
+
+
+//Functions returning another function
+
+function interviewQuestion(job) {
+    if(job == 'Designer') {
+        return function(name) {
+            console.log(name + ', Can you plase explain what is 1');
+        }
+    } else if (job == 'Teacher') {
+        return function(name) {
+            console.log(name + ', Can you plase explain what is 2');
+        }
+    } else {
+        return function(name) {
+            console.log(name + ', Can you plase explain what is 3');
+        }
+    }
+}
+
+
+var x = interviewQuestion('Teacher'); //sai, Can you plase explain what is 2
+var y = interviewQuestion('Designer'); //charan, Can you plase explain what is 1
+
+
+x('sai');
+y('charan');
+y('Reddy');
+
+interviewQuestion('teacher')('Mark'); //Mark, Can you plase explain what is 3
+*/
+
+//Immediately Invoked Function expressions (IIFE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
