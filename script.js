@@ -199,9 +199,144 @@ y('charan');
 y('Reddy');
 
 interviewQuestion('teacher')('Mark'); //Mark, Can you plase explain what is 3
-*/
+
 
 //Immediately Invoked Function expressions (IIFE)
+
+
+//Structure of IIFE
+(function () {
+    
+})();
+
+
+
+//This is the way we write generally
+
+function game() {
+    var score = Math.random() * 10; //we cannot access score variable from outside
+    console.log(score >= 5);
+}
+
+game();
+
+
+//This is the way to write in IIFE
+(function () {
+    var score = Math.random() * 10; //we cannot access score variable from outside
+    console.log(score >= 5);
+})();
+
+
+//Ex:
+(function (goodluck) {
+    var score = Math.random() * 10; //we cannot access score variable from outside
+    console.log(score >= 5 - goodluck);
+})(5); //passing argument to function
+
+
+
+//Closures -An inner function has always access to the variable and parameters of its outer function,
+//even after the outer function has returned.
+
+function retirement(retirementAge) {
+    var a = ' years left until retirement.';
+    return function(yearOfBirth) {
+        var age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+
+var retirementUS = retirement(55);
+retirementUS(1990); //29 years left until retirement.
+
+retirement(55)(1990); //29 years left until retirement.
+
+var retirementGermany = retirement(65);
+
+retirementGermany(1991); //40 years left until retirement.
+
+
+//Example of interview using the closures
+
+function interviewQuestion(job) {
+    
+    return function(name) {
+        if(job == 'Designer') {
+            console.log(name + ', Can you plase explain what is 1');
+    } else if (job == 'Teacher') {
+        
+            console.log(name + ', Can you plase explain what is 2');
+        
+    } else {
+        return function(name) {
+            console.log(name + ', Can you plase explain what is 3');
+        }
+    }
+}
+    
+}
+
+interviewQuestion('Designer')('Sai'); //Sai, Can you plase explain what is 1
+
+
+//Bind, Call and Apply - Functions are special kind of objects
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if(style === 'formal') {
+            console.log('Good '+ timeOfDay + ' ' + this.name);
+        } else if(style === 'friendly') {
+            console.log('Good '+ timeOfDay + ' ' + this.name);
+        }
+    }
+};
+
+//Another Object -- the call methods first argument is always set to this variable
+
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'Designer'
+};
+
+john.presentation('formal', 'morning'); //Good Morning
+john.presentation('formal', 'Afternoon'); //Good Afternoon
+john.presentation('friendly', 'Evening'); //Good Evening
+
+//Call METHOD - the below process is called method borrowing --call method allows us to set "this" variable
+
+
+john.presentation.call(emily, 'friendly', 'afternoon'); //Good afternoon Emily
+
+//Apply method accepts as an array
+
+
+//Bind generates a copy of a function, that we can store somewhere
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning'); //Good Morning John
+
+johnFriendly('night'); //Good night John
+
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+
+emilyFormal('afternoon'); //Good afternoon Emily
+
+*/
+
+
+
+
+
+
+
+
 
 
 

@@ -84,6 +84,18 @@ we can also return a function from a function
 
 Above are called first class functions.
 
+{Closure}
+
+An inner function has always access to the variable and parameters of its outer function,
+even after the outer function has returned.
+
+A new function gets a new execution context.
+
+{coheren}
+
+Depending on the other function
+
+
 
 
 
